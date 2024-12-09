@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+  
+html,
+body {
+    height: 100%;
+}
+
+  
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+  
+h1,
+h2,
+h3 {
+    line-height: 1;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #6c7289;
+    background-color: #f2ebe3;
+  
+    display: grid;
+    place-content: center;
+    margin: 1rem;
+}
+  
+  
+  
+.flex-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+
+.button {
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    gap: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.75em 1.5em;
+    background-color: #3c8067;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.925rem;
+}
+
+.button[data-icon="shopping-cart"]::before {
+    background-image: url("images/icon-cart.svg");
+    width: 15px;
+    height: 16px;
+}
+
+.button:is(:hover, :focus) {
+    background-color: #214538;
+}
+
+
+.product {
+    --content-padding: 1.5rem;
+    --content-spacing: 1rem;
+
+    display: grid;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    max-width: 600px;
+}
+
+@media (min-width: 600px) {
+    .product {
+        --content-padding: 2rem;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.product_content {
+    display: grid;
+    gap: var(--content-spacing);
+    padding: var(--content-padding);
+}
+
+.product_category {
+    font-size: 0.8125rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.product_title {
+    font-size: 2rem;
+    font-family: "Fraunces", serif;
+    color: #1c232b;
+}
+
+.product_price {
+    font-size: 2rem;
+    font-family: "Fraunces", serif;
+    color: #3c8067;
+}
